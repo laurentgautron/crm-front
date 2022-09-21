@@ -1,20 +1,23 @@
 <header class="fixed-top">
-  Header
+  <!-- pour cibler ou rajouter le header-->
+  <!-- sans selector c'est une transfusion simple, sinon transfusion multiple-->
+  <!-- selectionner la classe permet de se passer du prefix app du anguler.json -->
+  <ng-content select=".tr-header"></ng-content>
 </header>
 <main>
   <div class="shadow position-fixed">
   </div>
   <aside>
     <div class="scroller">
-      Nav
+      <ng-content select=".tr-nav"></ng-content>
     </div>
   </aside>
   <div class="page">
     <div class="contents">
-      Content
+      content
     </div>
     <footer>
-      Footer
+      <ng-content select=".tr-footer"></ng-content>
     </footer>
   </div>
 </main>

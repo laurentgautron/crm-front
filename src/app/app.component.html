@@ -1,1 +1,10 @@
-<app-ui></app-ui>
+<!-- on ne peut rien écrire dans un composant instancié -->
+<app-ui>
+  <!-- grâce au ng-content du ui.component.html on peut ajouter le header -->
+  <!-- la classe peut être passée dans le selector du ng -->
+  <app-header class="tr-header"></app-header>
+  <app-nav class="tr-nav"></app-nav>
+  <app-footer class="tr-footer"></app-footer>
+</app-ui>
+<!-- si on change de component (ex ui2 ) on changera uniquement <app-ui2> -->
+<!-- et faire la transfusion dans le html de ui2.component.html -->
