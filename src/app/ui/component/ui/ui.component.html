@@ -2,7 +2,11 @@
   <!-- pour cibler ou rajouter le header-->
   <!-- sans selector c'est une transclusion simple, sinon transclusion multiple-->
   <!-- selectionner la classe permet de se passer du prefix app du anguler.json -->
-  <button (click)="toggle()">open / close</button>
+  <span (click)="toggle()">
+    <!-- span pour utiliser le click-->
+    <!-- ng-content pour faire un bouton réutilisable-->
+    <ng-content select=".tr-btn"></ng-content>
+  </span>
   <ng-content select=".tr-header"></ng-content>
 </header>
 <main [ngClass]="{'close-aside': close}">
