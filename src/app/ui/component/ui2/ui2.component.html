@@ -12,12 +12,12 @@
 
   <div class="card d-flex flex-column">
     <header class="card-header text-center">
-      header
+      <ng-content select=".tr-header"></ng-content>
     </header>
 
-    <div class="body-nav-main d-flex">
-      <nav class="bg-light text-start vh-100">
-        nav
+    <div class="body-nav-main d-flex flex-grow-1">
+      <nav class="bg-light text-start">
+        <ng-content select=".tr-nav"></ng-content>
       </nav>
 
       <main class="card-body">
@@ -25,7 +25,9 @@
       </main>
     </div>
 
-    <footer class="card-footer text-center">footer</footer>
+    <footer class="card-footer text-center">
+      <ng-content select=".tr-footer"></ng-content>
+    </footer>
   </div>
 </body>
 
