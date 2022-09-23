@@ -4,13 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
   // on n'importe pas les modules ici mais dans le core
   // optimisation du code : un role pour un module
   // CoreModule avant ApproutingModule pour les imports de login
-  imports: [BrowserModule, CoreModule, AppRoutingModule],
+  imports: [BrowserModule, CoreModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent], // pour démarrer l'application
 })
