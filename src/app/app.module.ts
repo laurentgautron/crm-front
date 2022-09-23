@@ -9,7 +9,8 @@ import { CoreModule } from './core/core.module';
   declarations: [AppComponent],
   // on n'importe pas les modules ici mais dans le core
   // optimisation du code : un role pour un module
-  imports: [BrowserModule, AppRoutingModule, CoreModule],
+  // CoreModule avant ApproutingModule pour les imports de login
+  imports: [BrowserModule, CoreModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent], // pour démarrer l'application
 })

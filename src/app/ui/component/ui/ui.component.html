@@ -2,24 +2,24 @@
   <!-- pour cibler ou rajouter le header-->
   <!-- sans selector c'est une transclusion simple, sinon transclusion multiple-->
   <!-- selectionner la classe permet de se passer du prefix app du anguler.json -->
-  <span (click)="toggle()">
-    <!-- span pour utiliser le click-->
-    <!-- ng-content pour faire un bouton réutilisable-->
+  <!-- span pour utiliser le click-->
+  <!-- ng-content pour faire un bouton réutilisable-->
 
-    <!-- pour choisir les boutons open ou close-->
+  <!-- pour choisir les boutons open ou close-->
 
-    <!-- <ng-content *ngIf="!close" select=".tr-btn-close"></ng-content>
+  <!-- <ng-content *ngIf="!close" select=".tr-btn-close"></ng-content>
     <ng-content *ngIf="close" select=".tr-btn-open"></ng-content> -->
 
-    <!-- autres syntaxes -->
-    <!-- ngIf else-->
-    <!-- <ng-content *ngIf="close; else elseBlock" select=".tr-btn-open"></ng-content>
-    <ng-template #elseBlock>
-      <ng-content select=".tr-btn-close"></ng-content>
-    </ng-template> -->
+  <!-- autres syntaxes -->
+  <!-- ngIf else-->
+  <!-- <ng-content *ngIf="close; else elseBlock" select=".tr-btn-open"></ng-content>
+      <ng-template #elseBlock>
+        <ng-content select=".tr-btn-close"></ng-content>
+      </ng-template> -->
 
-    <!-- ngIf then else -->
-    <!-- la balise sert juste à poser le then else donc ng-container au lieu de div: pas rendu dans le DOM-->
+  <!-- ngIf then else -->
+  <!-- la balise sert juste à poser le then else donc ng-container au lieu de div: pas rendu dans le DOM-->
+  <button class="btn btn-primary" (click)="toggle()">
     <ng-container *ngIf="close; then thenBlock else elseBlock" select=".tr-btn-open"></ng-container>
     <ng-template #thenBlock>
       <ng-content select=".tr-btn-open"></ng-content>
@@ -27,7 +27,7 @@
     <ng-template #elseBlock>
       <ng-content select=".tr-btn-close"></ng-content>
     </ng-template>
-  </span>
+  </button>
 
   <ng-content select=".tr-header"></ng-content>
 </header>
@@ -36,6 +36,10 @@
   </div>
   <aside>
     <div class="scroller">
+      <nav class="d-flex flex-column justify-content-around align-items-center mt-3">
+        <ng-content select=".tr-clients"></ng-content>
+        <ng-content select=".tr-orders"></ng-content>
+      </nav>
       <ng-content select=".tr-nav"></ng-content>
     </div>
   </aside>
