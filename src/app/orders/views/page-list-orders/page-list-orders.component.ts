@@ -11,13 +11,19 @@ export class PageListOrdersComponent implements OnInit {
   // on parle de proprétés dans un langage objet, sinon ce sont des varialbles
   public title: string;
   public collection!: Order[];
-  public labelButton: string;
-  public route: string;
+  public headers: string[];
 
   constructor(private ordersService: OrdersService) {
+    this.headers = [
+      'Type',
+      'Client',
+      'Durée',
+      'tjmHT',
+      'total HT',
+      'total TTC',
+      'Etat',
+    ];
     this.title = 'list of orders';
-    this.labelButton = 'displayList';
-    this.route = 'add';
     // subscribe = appel asynchrone, donc le this.collection peut être undefined
     this.ordersService.collection$.subscribe((data) => {
       console.log(data);
