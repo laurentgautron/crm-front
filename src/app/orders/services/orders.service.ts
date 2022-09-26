@@ -8,6 +8,8 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class OrdersService {
+  // voir RxJS qui fait parti d'Angular
+  // observable froid
   public collection$: Observable<Order[]>;
   private urlApi: string;
 
