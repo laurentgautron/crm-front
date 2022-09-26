@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class OrdersService {
   // voir RxJS qui fait parti d'Angular
-  // observable froid
+  // observable:  froid
   public collection$: Observable<Order[]>;
   private urlApi: string;
 
@@ -18,6 +18,6 @@ export class OrdersService {
 
     this.collection$ = this.httpClient.get<Order[]>(`${this.urlApi}/orders`);
 
-    console.log(this.collection$);
+    //console.log(this.collection$);
   }
 }

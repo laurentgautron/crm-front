@@ -12,7 +12,7 @@ export class FooterComponent implements OnInit {
   constructor(private versionService: VersionService) {
     this.versionService.numVersion.subscribe((data) => {
       this.version = data;
-      console.log(data);
+      //console.log(data);
     });
   }
 

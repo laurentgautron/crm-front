@@ -1,1 +1,18 @@
-<p>page-list-orders works!</p>
+<app-template-full-width [title]="title">
+  <button (click)="changeTitle()">ChangeTitle</button>
+</app-template-full-width>
+
+<!-- on peut changer les couleurs dans les scss des templates :
+  utilité du webComposant template.
+le ng-content du html permet d'insérer du contenu
+pour changer le titre: communication parent-enfant
+page-list-order = parent
+template = enfant
+on peut faire un titre dynamique !
+( le input dans l'enfant)
+si on écrit dans les chevrons ont écrit dans l'enfant et on change la valeur du title
+on ne peut envoyer que des chaines de caractère, sauf si on met des []
+propety binding
+[title] = "title" on utilise le title du page-list-orders component:
+on fait passer la valeur de la propriété title de page-list-component au title template-full-width
+-->

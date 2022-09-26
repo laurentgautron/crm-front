@@ -13,7 +13,7 @@ export class VersionService {
 
   public incrementVersion(): void {
     // .value permet de récupérer la valeur en dur de l'observable
-    console.log(this.numVersion.value + 1);
+    //console.log(this.numVersion.value + 1);
     this.numVersion.next(this.numVersion.value + 1);
   }
 }
