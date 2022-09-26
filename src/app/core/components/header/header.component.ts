@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CoreService } from '../../services/core.service';
+import { VersionService } from '../../services/version.service';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +9,8 @@ import { CoreService } from '../../services/core.service';
 export class HeaderComponent implements OnInit {
   public crmVersion!: Number;
 
-  constructor(private coreService: CoreService) {
-    coreService.version.subscribe((data) => (this.crmVersion = data));
+  constructor(private versionService: VersionService) {
+    versionService.numVersion.subscribe((data) => (this.crmVersion = data));
   }
 
   ngOnInit(): void {}
