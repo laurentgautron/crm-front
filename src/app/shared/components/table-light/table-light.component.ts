@@ -7,20 +7,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TableLightComponent implements OnInit {
   @Input() public headers!: string[];
-  @Input() public collection!: any;
+  //@Input() public collection!: any;
+  // plus besoin du input car le ngFor est déplacé
 
   constructor() {
     console.log(this.headers);
-    console.log(this.collection);
+    //console.log(this.collection);
   }
 
   ngOnChanges() {
     console.log(this.headers);
-    console.log(this.collection);
+    //console.log(this.collection);
   }
 
   ngOnInit(): void {
     console.log(this.headers);
-    console.log(this.collection);
+    //console.log(this.collection);
   }
 }
