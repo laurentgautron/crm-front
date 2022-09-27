@@ -14,9 +14,15 @@
       <td>{{ item.tjmHt |currency }}</td>
       <!-- <td>{{ item.nbJours * item.tjmHt }}</td> -->
       <!-- total est le pipe | après les : on ajoute les paramètres -->
-      <td>{{ item.nbJours |total : item.tjmHt |currency}}</td>
-      <td>{{item.nbJours |total : item.tjmHt : item.tva |currency}}</td>
-      <td>{{ item.state }}</td>
+      <td>{{ item.nbJours |total : item.tjmHt |currency }}</td>
+      <td>{{item.nbJours |total : item.tjmHt : item.tva |currency }}</td>
+      <td>
+        <select (change)="changeState(item, $event)">
+          <option *ngFor="let state of states" [value]="state" [selected]="state === item.state">
+            {{ state }}
+          </option>
+        </select>
+      </td>
     </tr>
   </app-table-light>
   <app-btn routerLink="add" label="add"></app-btn>
