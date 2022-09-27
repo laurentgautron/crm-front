@@ -36,4 +36,11 @@ export class PageListOrdersComponent implements OnInit {
   public changeTitle(): void {
     this.title = 'title changed';
   }
+
+  // en typescript il n'y a que des number, pas de float, double, ...
+  public total(val: number, coef: number, tva?: number): number {
+    console.log('totalCall');
+    if (tva) return val * coef * (1 + tva / 100);
+    return val * coef;
+  }
 }
