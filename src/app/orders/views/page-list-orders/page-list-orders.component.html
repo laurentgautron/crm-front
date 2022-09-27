@@ -1,6 +1,8 @@
 <!-- le ngIf sert à attendre que la collection soit définie avant de l'afficher-->
 <!-- le async fait la unsuscribe automatiquement lorsqu'on change de vue -->
 <app-template-full-width [title]="title" *ngIf="collection$ |async as collection">
+  <!-- permet de voir ce qu'il y a à l'intérieur de l'objet collection -->
+  <!-- <pre> {{ collection |json }}</pre> -->
   <!-- <button (click)="changeTitle()">ChangeTitle</button> -->
   <app-table-light [headers]="headers">
     <!-- pour pouvoir réutiliser le table-light ( garder en générique )-->
@@ -8,11 +10,12 @@
       <td>{{ item.typePresta }}</td>
       <td>{{ item.client }}</td>
       <td>{{ item.nbJours}}</td>
-      <td>{{ item.tjmHt }}</td>
+      <!-- formatage des unités -->
+      <td>{{ item.tjmHt |currency }}</td>
       <!-- <td>{{ item.nbJours * item.tjmHt }}</td> -->
       <!-- total est le pipe | après les : on ajoute les paramètres -->
-      <td>{{ item.nbJours |total : item.tjmHt }}</td>
-      <td>{{item.nbJours |total : item.tjmHt : item.tva }}</td>
+      <td>{{ item.nbJours |total : item.tjmHt |currency}}</td>
+      <td>{{item.nbJours |total : item.tjmHt : item.tva |currency}}</td>
       <td>{{ item.state }}</td>
     </tr>
   </app-table-light>
